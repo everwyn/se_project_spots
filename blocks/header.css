@@ -1,0 +1,136 @@
+.header {
+  width: 1280px;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  justify-content: space-between;
+  padding: 34px 0 20px;
+  border-bottom: 1px solid #21212166;
+  font-family: "Poppins", "Times New Roman", serif;
+}
+
+.header__avatar-section {
+  display: flex;
+  height: 190px;
+  width: 505px;
+  gap: 20px;
+}
+
+.header__avatar {
+  border-radius: 7px;
+}
+
+.header__avatar-bio-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header__avatar-bio {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.header__avatar-name {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+  color: #212121;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.header__avatar-description {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  opacity: 0.7;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.header__avatar-edit {
+  width: 107.34px;
+  height: 16px;
+  opacity: 0.7px;
+  padding: 0;
+  border: none;
+  background-color: #fcf5e5;
+}
+
+.header__avatar-edit-image {
+  height: 16px;
+}
+
+.header__button {
+  width: 149px;
+  height: 52px;
+  border-radius: 8px;
+  background-color: black;
+  margin-top: auto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  text-decoration-skip-ink: none;
+  color: white;
+}
+
+.header__button-symbol {
+  height: 12px;
+  padding: 0 2px 0 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    width: 288px;
+    height: 274px;
+    flex-direction: column;
+    padding: 20px 0;
+    justify-content: center;
+    border-bottom: 1px solid #21212166;
+  }
+
+  .header__avatar-section {
+    text-align: center;
+    flex-direction: column;
+    max-width: 288px;
+    height: 134px;
+  }
+
+  .header__avatar {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+  }
+
+  .header__avatar-name {
+    font-size: 20px;
+  }
+
+  .header__avatar-description {
+    font-size: 16px;
+  }
+
+  .header__avatar-edit {
+    margin: 32px auto 0;
+    width: 107px;
+    height: 16px;
+  }
+
+  .header__button {
+    width: 288px;
+    height: 52px;
+  }
+}

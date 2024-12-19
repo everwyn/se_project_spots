@@ -1,0 +1,20 @@
+.menubar {
+  background-color: #ffffff;
+  display: flex;
+  width: 1440px;
+  height: 46px;
+  justify-content: center;
+  align-items: center;
+  font-family: "DMMono", "Poppins", "Times New Roman", serif;
+}
+
+.menubar__icon {
+  height: 26px;
+  width: 94px;
+}
+
+@media screen and (max-width: 320px) {
+  .menubar {
+    width: 320px;
+  }
+}

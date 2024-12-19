@@ -1,0 +1,16 @@
+.page {
+  max-width: 1440px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  background-color: #fcf5e5;
+  overflow: hidden;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    max-width: 320px;
+  }
+}
