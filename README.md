@@ -31,3 +31,7 @@ HTML file is index.html which houses the page coding
 **CSS**
 
 The bulk of the page is managed by CSS in order to set styling
+
+**Webpage Link**
+
+https://everwyn.github.io/se_project_spots/
