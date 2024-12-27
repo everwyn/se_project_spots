@@ -35,3 +35,7 @@ The bulk of the page is managed by CSS in order to set styling
 **Webpage Link**
 
 https://everwyn.github.io/se_project_spots/
+
+**Recording Link**
+
+https://1drv.ms/v/c/f6d06bfcd42e8b9a/ESRC21KsANFNn9jUo7Bx4ZUBvatyyDfTBf6l36FK897PUw?e=SvMyIW
