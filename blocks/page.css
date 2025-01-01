@@ -4,9 +4,14 @@
   position: relative;
   justify-content: center;
   background-color: #fcf5e5;
-  overflow: hidden;
   flex-direction: column;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1331px) {
+  .page {
+    max-width: 1326px;
+  }
 }
 
 @media screen and (max-width: 763px) {
