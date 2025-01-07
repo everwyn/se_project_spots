@@ -15,140 +15,129 @@
   </head>
   <body>
     <div class="page">
-      <section class="menubar">
-        <img class="menubar__icon" src="./images/Logo.svg" alt="Logo" />
-      </section>
-
       <header class="header">
-        <section class="header__avatar-section">
-          <img
-            src="./images/avatar.jpg"
-            alt="Bessie Coleman"
-            class="header__avatar"
-          />
-          <form class="header__avatar-bio-section form">
-            <fieldset class="header__avatar-bio">
-              <input
-                type="text"
-                class="header__avatar-name"
-                placeholder="Bessie Coleman"
-              />
-
-              <input
-                type="text"
-                class="header__avatar-description"
-                placeholder="Civil Aviator"
-              />
-            </fieldset>
-
-            <button class="header__avatar-edit">
-              <img
-                src="./images/Group 2.svg"
-                alt="Edit Button"
-                class="header__avatar-edit-image"
-              />
-              Edit Profile
-            </button>
-          </form>
-        </section>
-        <button class="header__button">
-          <img
-            src="./images/Group_26.svg"
-            alt="Plus Symbol"
-            class="header__button-symbol"
-          />
-          New Post
-        </button>
+        <img class="header__logo" src="./images/Logo.svg" alt="Logo" />
       </header>
 
-      <main class="cards">
-        <section class="cards__grid">
-          <article class="cards__card">
+      <main class="main">
+        <section class="profile">
+          <div class="profile__avatar-section">
+            <img
+              src="./images/avatar.jpg"
+              alt="Bessie Coleman"
+              class="profile__avatar"
+            />
+            <div class="profile__avatar-bio-section">
+              <h1 class="profile__avatar-name">Bessie Coleman</h1>
+              <p class="profile__avatar-description">Civil Aviator</p>
+
+              <button class="profile__avatar-edit" type="button">
+                <img
+                  src="./images/Group 2.svg"
+                  alt="Edit Button"
+                  class="profile__avatar-edit-image"
+                />
+                Edit Profile
+              </button>
+            </div>
+          </div>
+          <button class="profile__button" type="button">
+            <img
+              src="./images/Group_26.svg"
+              alt="Plus Symbol"
+              class="profile__button-symbol"
+            />
+            New Post
+          </button>
+        </section>
+
+        <ul class="cards">
+          <li class="cards__card">
             <img
               class="cards__card-image"
               src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
               alt="Val Thorens"
             />
             <div class="cards__card-comments">
-              <p class="cards__card-description">Val Thorens</p>
-              <button class="cards__card-like">
-                <img src="./images/Like_Icon.png" alt="Like" />
+              <h3 class="cards__card-description">Val Thorens</h3>
+              <button class="cards__card-like" type="button">
+                <img src="./images/Like_Icon.svg" alt="Like" />
               </button>
             </div>
-          </article>
+          </li>
 
-          <article class="cards__card">
+          <li class="cards__card">
             <img
               class="cards__card-image"
               src="./images/2-photo-by-ceiline-from-pexels.jpg"
               alt="Resturaunt terrace"
             />
             <div class="cards__card-comments">
-              <p class="cards__card-description">Resturaunt terrace</p>
-              <button class="cards__card-like">
-                <img src="./images/Like_Icon.png" alt="Like" />
+              <h3 class="cards__card-description">Resturaunt terrace</h3>
+              <button class="cards__card-like" type="button">
+                <img src="./images/Like_Icon.svg" alt="Like" />
               </button>
             </div>
-          </article>
+          </li>
 
-          <article class="cards__card">
+          <li class="cards__card">
             <img
               class="cards__card-image"
               src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
               alt="An outdoor cafe"
             />
             <div class="cards__card-comments">
-              <p class="cards__card-description">An outdoor cafe</p>
-              <button class="cards__card-like">
-                <img src="./images/Like_Icon.png" alt="Like" />
+              <h3 class="cards__card-description">An outdoor cafe</h3>
+              <button class="cards__card-like" type="button">
+                <img src="./images/Like_Icon.svg" alt="Like" />
               </button>
             </div>
-          </article>
+          </li>
 
-          <article class="cards__card">
+          <li class="cards__card">
             <img
               class="cards__card-image"
               src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
               alt="A very long bridge"
             />
             <div class="cards__card-comments">
-              <p class="cards__card-description">
+              <h3 class="cards__card-description">
                 A very long bridge, over the forest...
-              </p>
-              <button class="cards__card-like">
-                <img src="./images/Like_Icon.png" alt="Like" />
+              </h3>
+              <button class="cards__card-like" type="button">
+                <img src="./images/Like_Icon.svg" alt="Like" />
               </button>
             </div>
-          </article>
+          </li>
 
-          <article class="cards__card">
+          <li class="cards__card">
             <img
               class="cards__card-image"
               src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
               alt="Tunnel with morning light"
             />
             <div class="cards__card-comments">
-              <p class="cards__card-description">Tunnel with morning light</p>
-              <button class="cards__card-like">
-                <img src="./images/Like_Icon.png" alt="Like" />
+              <h3 class="cards__card-description">Tunnel with morning light</h3>
+              <button class="cards__card-like" type="button">
+                <img src="./images/Like_Icon.svg" alt="Like" />
               </button>
             </div>
-          </article>
+          </li>
 
-          <article class="cards__card">
+          <li class="cards__card">
             <img
               class="cards__card-image"
               src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
               alt="Mountain house"
             />
             <div class="cards__card-comments">
-              <p class="cards__card-description">Mountain house</p>
-              <button class="cards__card-like">
-                <img src="./images/Like_Icon.png" alt="Like" />
+              <h3 class="cards__card-description">Mountain house</h3>
+              <button class="cards__card-like" type="button">
+                <img src="./images/Like_Icon.svg" alt="Like" />
               </button>
             </div>
-          </article>
-        </section>
+          </li>
+        </ul>
       </main>
 
       <footer class="footer">2024 © Spots</footer>

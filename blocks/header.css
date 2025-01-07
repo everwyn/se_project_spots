@@ -1,180 +1,32 @@
 .header {
-  width: 1280px;
+  background-color: #ffffff;
   display: flex;
-  margin: 0 auto;
-  position: relative;
-  justify-content: space-between;
-  padding: 34px 0 20px;
-  border-bottom: 1px solid #21212166;
-  font-family: "Poppins", "Times New Roman", serif;
+  max-width: 1440px;
+  height: 46px;
+  justify-content: center;
+  align-items: center;
+  font-family: "DMMono", "Poppins", "Times New Roman", serif;
 }
 
-.header__avatar-section {
-  display: flex;
-  height: 190px;
-  width: 505px;
-  gap: 20px;
+.header__icon {
+  height: 26px;
+  width: 94px;
 }
 
-.header__avatar {
-  border-radius: 7px;
+@media screen and (max-width: 1330px) {
+  .header {
+    max-width: 880px;
+  }
 }
 
-.header__avatar-bio-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.header__avatar-bio {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.header__avatar-name {
-  font-size: 32px;
-  font-weight: 500;
-  height: 1;
-  color: #212121;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  border: none;
-  background-color: #fcf5e5;
-  max-width: 420px;
-}
-
-.header__avatar-description {
-  font-size: 16px;
-  height: 1;
-  font-weight: 500;
-  opacity: 0.7;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  border: none;
-  background-color: #fcf5e5;
-  max-width: 420px;
-}
-
-.header__avatar-edit {
-  width: 107.34px;
-  line-height: 1;
-  opacity: 0.7px;
-  padding: 0;
-  border: none;
-  background-color: #fcf5e5;
-  opacity: 0.7;
-  color: #212121;
-  text-align: center;
-  font-size: 16px;
-  display: flex;
-  text-indent: 2px;
-}
-
-.header__avatar-edit-image {
-  height: 16px;
-  opacity: 0.7;
-}
-
-.header__avatar-edit-image:hover {
-  opacity: 1;
-}
-
-.header__avatar-edit:hover {
-  color: black;
-  opacity: 1;
-}
-
-.header__button {
-  width: 149px;
-  height: 52px;
-  border-radius: 8px;
-  background-color: black;
-  margin-top: auto;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1;
-  text-align: center;
-  text-decoration-skip-ink: none;
-  color: white;
-}
-
-.header__button:hover {
-  background-color: #212121cc;
-}
-
-.header__button-symbol {
-  height: 12px;
-  padding: 0 2px 0 0;
-  text-align: center;
+@media screen and (max-width: 879px) {
+  .header {
+    max-width: 764px;
+  }
 }
 
 @media screen and (max-width: 763px) {
   .header {
-    width: 288px;
-    height: 316px;
-    flex-direction: column;
-    padding: 20px 0;
-    justify-content: center;
-    border-bottom: 1px solid #21212166;
-  }
-
-  .header__avatar-section {
-    flex-direction: column;
-    max-width: 288px;
-    height: 238px;
-  }
-
-  .header__avatar {
-    height: 80px;
-    width: 80px;
-    margin: 0 auto;
-  }
-
-  .header__avatar-bio-section {
-    height: 206px;
-  }
-
-  .header__avatar-name {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .header__avatar-description {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .header__avatar-edit {
-    margin: 32px auto 0;
-    width: 107px;
-    height: 16px;
-  }
-
-  .header__button {
-    width: 288px;
-    height: 52px;
-  }
-}
-
-@media screen and (min-width: 880px) and (max-width: 1330px) {
-  .header {
-    width: 850px;
-  }
-}
-
-@media screen and (min-width: 764px) and (max-width: 879px) {
-  .header {
-    width: 700px;
+    width: 100%;
   }
 }

@@ -9,9 +9,3 @@
   font-weight: 500;
   src: url(../vendor/fonts/Poppins/Poppins-Medium.ttf) format("truetype");
 }
-
-@font-face {
-  font-family: "DMMono";
-  font-weight: 400;
-  src: url(../vendor/fonts/DMMono/DMMono-Regular.ttf) format("truetype");
-}
