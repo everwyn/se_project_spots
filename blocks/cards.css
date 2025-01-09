@@ -1,4 +1,5 @@
 .cards {
+  margin: 20px 0 40px;
   max-width: 1280px;
   padding: 0;
   overflow: hide;
@@ -79,7 +80,7 @@
   .cards {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 20px;
-    margin: 20px 0 0;
+    margin: 20px 0;
   }
 
   .cards__card {

@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  padding: 20px 0 40px;
   border-bottom: 1px solid #21212166;
 }
 
@@ -23,6 +22,5 @@
 @media screen and (max-width: 763px) {
   .main {
     max-width: 288px;
-    padding: 20px 0;
   }
 }
