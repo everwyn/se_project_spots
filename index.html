@@ -14,6 +14,37 @@
   </head>
   <body>
     <div class="page">
+      <section class="modal">
+        <div class="modal__background"></div>
+        <div class="modal__container">
+          <form class="modal__form">
+            <h2 class="modal__title">Edit Profile</h2>
+            <fieldset class="modal__fieldset">
+              <label for="name" class="modal__name-label">Name</label>
+              <input
+                type="text"
+                class="modal__name"
+                id="name"
+                placeholder="Type your name"
+              />
+              <label for="description" class="modal__description-label"
+                >Description</label
+              >
+              <input
+                type="text"
+                class="modal__description"
+                id="description"
+                placeholder="Describe yourself"
+              />
+              <button class="modal__save">Save</button>
+            </fieldset>
+            <button class="modal__close">
+              <img src="./images/x_button.svg" alt="Close button" />
+            </button>
+          </form>
+        </div>
+      </section>
+
       <header class="header">
         <img class="header__logo" src="./images/Logo.svg" alt="Logo" />
       </header>
@@ -141,6 +172,7 @@
 
       <footer class="footer">2024 © Spots</footer>
     </div>
+
     <script src="./scripts/index.js" defer></script>
   </body>
 </html>
