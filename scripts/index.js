@@ -37,16 +37,15 @@ function getCardElement(data) {
 
   const cardName = cardElement.querySelector(".cards__card-description");
   const cardLink = cardElement.querySelector(".cards__card-image");
-  const cardAlt = cardElement.querySelector(".cards__card-image");
 
   cardName.textContent = data.name;
-  cardAlt.alt = data.name;
+  cardLink.alt = data.name;
   cardLink.src = data.link;
 
   return cardElement;
 }
 
-for (let i = 0; i <= initialCards.length; i++) {
+for (let i = 0; i < initialCards.length; i++) {
   const cardElement = getCardElement(initialCards[i]);
   cards.prepend(cardElement);
 }
