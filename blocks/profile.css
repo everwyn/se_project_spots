@@ -37,8 +37,7 @@
   border: none;
   background-color: #fcf5e5;
   max-width: 420px;
-  margin: 0;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 
 .profile__avatar-description {

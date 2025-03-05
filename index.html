@@ -36,9 +36,9 @@
                 id="description"
                 placeholder="Describe yourself"
               />
-              <button class="modal__save">Save</button>
+              <button type="submit" class="modal__save">Save</button>
             </fieldset>
-            <button class="modal__close">
+            <button type="button" class="modal__close">
               <img src="./images/x_button.svg" alt="Close button" />
             </button>
           </form>
@@ -81,93 +81,19 @@
           </button>
         </section>
 
-        <ul class="cards">
-          <li class="cards__card">
-            <img
-              class="cards__card-image"
-              src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Val Thorens"
-            />
-            <div class="cards__card-comments">
-              <h3 class="cards__card-description">Val Thorens</h3>
-              <button class="cards__card-like" type="button">
-                <img src="./images/Like_Icon.svg" alt="Like" />
-              </button>
+        <div class="cards">
+          <template id="cards__template">
+            <div class="cards__card">
+              <img class="cards__card-image" src="" alt="" />
+              <div class="cards__card-comments">
+                <h3 class="cards__card-description"></h3>
+                <button class="cards__card-like" type="button">
+                  <img src="./images/Like_Icon.svg" alt="Like" />
+                </button>
+              </div>
             </div>
-          </li>
-
-          <li class="cards__card">
-            <img
-              class="cards__card-image"
-              src="./images/2-photo-by-ceiline-from-pexels.jpg"
-              alt="Resturaunt terrace"
-            />
-            <div class="cards__card-comments">
-              <h3 class="cards__card-description">Resturaunt terrace</h3>
-              <button class="cards__card-like" type="button">
-                <img src="./images/Like_Icon.svg" alt="Like" />
-              </button>
-            </div>
-          </li>
-
-          <li class="cards__card">
-            <img
-              class="cards__card-image"
-              src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-              alt="An outdoor cafe"
-            />
-            <div class="cards__card-comments">
-              <h3 class="cards__card-description">An outdoor cafe</h3>
-              <button class="cards__card-like" type="button">
-                <img src="./images/Like_Icon.svg" alt="Like" />
-              </button>
-            </div>
-          </li>
-
-          <li class="cards__card">
-            <img
-              class="cards__card-image"
-              src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-              alt="A very long bridge"
-            />
-            <div class="cards__card-comments">
-              <h3 class="cards__card-description">
-                A very long bridge, over the forest...
-              </h3>
-              <button class="cards__card-like" type="button">
-                <img src="./images/Like_Icon.svg" alt="Like" />
-              </button>
-            </div>
-          </li>
-
-          <li class="cards__card">
-            <img
-              class="cards__card-image"
-              src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-              alt="Tunnel with morning light"
-            />
-            <div class="cards__card-comments">
-              <h3 class="cards__card-description">Tunnel with morning light</h3>
-              <button class="cards__card-like" type="button">
-                <img src="./images/Like_Icon.svg" alt="Like" />
-              </button>
-            </div>
-          </li>
-
-          <li class="cards__card">
-            <img
-              class="cards__card-image"
-              src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Mountain house"
-            />
-            <div class="cards__card-comments">
-              <h3 class="cards__card-description">Mountain house</h3>
-              <button class="cards__card-like" type="button">
-                <img src="./images/Like_Icon.svg" alt="Like" />
-              </button>
-            </div>
-          </li>
-        </ul>
+          </template>
+        </div>
       </main>
 
       <footer class="footer">2024 © Spots</footer>
