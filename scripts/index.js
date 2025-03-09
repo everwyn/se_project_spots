@@ -54,7 +54,7 @@ for (let i = 0; i < initialCards.length; i++) {
 const profileFormElement = document.querySelector("#edit-modal");
 const editButtonProfile = document.querySelector(".profile__avatar-edit");
 const closeButtonModal = profileFormElement.querySelector(".modal__close");
-const modalFormElement = profileFormElement.querySelector(".modal__save");
+const modalFormElement = document.querySelector(".modal__save");
 
 const profileNameElement = document.querySelector(".profile__avatar-name");
 const profileJobElement = document.querySelector(
@@ -67,19 +67,25 @@ const jobInput = profileFormElement.querySelector(".modal__description");
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  let profileNameEdit = nameInput.value;
-  let profileJobEdit = jobInput.value;
+  const profileNameEdit = nameInput.value;
+  const profileJobEdit = jobInput.value;
 
   profileNameElement.textContent = profileNameEdit;
   profileJobElement.textContent = profileJobEdit;
 
-  toggleModal();
+  closeModal();
 }
 
-function toggleModal() {
-  profileFormElement.classList.toggle("modal_opened");
+function openModal() {
+  profileFormElement.classList.add("modal_opened");
+  nameInput.value = profileNameElement.textContent;
+  jobInput.value = profileJobElement.textContent;
 }
 
-editButtonProfile.addEventListener("click", toggleModal);
-closeButtonModal.addEventListener("click", toggleModal);
-modalFormElement.addEventListener("click", handleProfileFormSubmit);
+function closeModal() {
+  profileFormElement.classList.remove("modal_opened");
+}
+
+editButtonProfile.addEventListener("click", openModal);
+closeButtonModal.addEventListener("click", closeModal);
+modalFormElement.addEventListener("submit", handleProfileFormSubmit);

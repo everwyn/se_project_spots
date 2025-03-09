@@ -1,5 +1,5 @@
 .modal {
-  width: 1440px;
+  width: 100%;
   min-height: 100%;
   display: flex;
   position: fixed;
@@ -16,7 +16,7 @@
 }
 
 .modal__background {
-  width: 1440px;
+  width: 100%;
   min-height: 100%;
   display: flex;
   position: absolute;
@@ -153,49 +153,13 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1440px) {
-  .modal {
-    max-width: 1326px;
-  }
-
-  .modal__background {
-    max-width: 1326px;
-  }
-}
-
-@media screen and (max-width: 1330px) {
-  .modal {
-    max-width: 880px;
-  }
-
-  .modal__background {
-    max-width: 880px;
-  }
-}
-
 @media screen and (max-width: 879px) {
-  .modal {
-    max-width: 764px;
-  }
-
-  .modal__background {
-    max-width: 764px;
-  }
-
   .modal__container {
     max-width: 654px;
   }
 }
 
 @media screen and (max-width: 763px) {
-  .modal {
-    max-width: 320px;
-  }
-
-  .modal__background {
-    max-width: 320px;
-  }
-
   .modal__container {
     max-width: 300px;
     height: 336px;

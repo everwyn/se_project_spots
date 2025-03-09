@@ -1,33 +1,8 @@
 .page {
-  max-width: 1440px;
   display: flex;
   position: relative;
   justify-content: center;
   background-color: #fcf5e5;
   flex-direction: column;
   margin: 0 auto;
-}
-
-@media screen and (max-width: 1440px) {
-  .page {
-    max-width: 1326px;
-  }
-}
-
-@media screen and (max-width: 1330px) {
-  .page {
-    max-width: 880px;
-  }
-}
-
-@media screen and (max-width: 879px) {
-  .page {
-    max-width: 764px;
-  }
-}
-
-@media screen and (max-width: 763px) {
-  .page {
-    max-width: 320px;
-  }
 }

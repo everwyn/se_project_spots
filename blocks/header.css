@@ -1,32 +1,13 @@
 .header {
   background-color: #ffffff;
   display: flex;
-  max-width: 1440px;
   height: 46px;
   justify-content: center;
   align-items: center;
-  font-family: "DMMono", "Poppins", "Times New Roman", serif;
+  font-family: "Poppins", "Times New Roman", serif;
 }
 
 .header__icon {
   height: 26px;
   width: 94px;
-}
-
-@media screen and (max-width: 1330px) {
-  .header {
-    max-width: 880px;
-  }
-}
-
-@media screen and (max-width: 879px) {
-  .header {
-    max-width: 764px;
-  }
-}
-
-@media screen and (max-width: 763px) {
-  .header {
-    width: 100%;
-  }
 }
