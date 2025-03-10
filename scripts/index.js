@@ -1,6 +1,6 @@
 // Card creator for initial cards
 
-const cardTemplate = document.querySelector("#cards__template");
+const cardTemplate = document.querySelector("#card-template");
 const cards = document.querySelector(".cards");
 
 const initialCards = [
@@ -32,11 +32,11 @@ const initialCards = [
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
-    .querySelector(".cards__item")
+    .querySelector(".card__item")
     .cloneNode(true);
 
-  const cardName = cardElement.querySelector(".cards__description");
-  const cardLink = cardElement.querySelector(".cards__image");
+  const cardName = cardElement.querySelector(".card__description");
+  const cardLink = cardElement.querySelector(".card__image");
 
   cardName.textContent = data.name;
   cardLink.alt = data.name;
@@ -61,8 +61,8 @@ const profileJobElement = document.querySelector(
   ".profile__avatar-description"
 );
 
-const nameInput = profileFormElement.querySelector(".fieldset__name");
-const jobInput = profileFormElement.querySelector(".fieldset__description");
+const nameInput = profileFormElement.querySelector("#name");
+const jobInput = profileFormElement.querySelector("#description");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
