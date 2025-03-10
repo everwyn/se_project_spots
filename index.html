@@ -14,32 +14,11 @@
   </head>
   <body>
     <div class="page">
-      <section class="modal" id="edit-modal">
-        <div class="modal__background"></div>
-        <div class="modal__container">
-          <form class="modal__form">
-            <h2 class="modal__title">Edit Profile</h2>
-            <fieldset class="modal__fieldset">
-              <label for="name" class="modal__name-label">Name</label>
-              <input type="text" class="modal__name" id="name" />
-              <label for="description" class="modal__description-label"
-                >Description</label
-              >
-              <input type="text" class="modal__description" id="description" />
-              <button type="submit" class="modal__save">Save</button>
-            </fieldset>
-            <button type="button" class="modal__close">
-              <img src="./images/x_button.svg" alt="Close button" />
-            </button>
-          </form>
-        </div>
-      </section>
-
       <header class="header">
         <img class="header__logo" src="./images/Logo.svg" alt="Logo" />
       </header>
 
-      <main class="main">
+      <main class="content">
         <section class="profile">
           <div class="profile__avatar-section">
             <img
@@ -71,22 +50,42 @@
           </button>
         </section>
 
-        <div class="cards">
+        <ul class="cards">
           <template id="cards__template">
-            <div class="cards__card">
-              <img class="cards__card-image" src="" alt="" />
-              <div class="cards__card-comments">
-                <h3 class="cards__card-description"></h3>
-                <button class="cards__card-like" type="button">
+            <li class="cards__item">
+              <img class="cards__image" src="" alt="" />
+              <div class="cards__comments">
+                <h3 class="cards__description"></h3>
+                <button class="cards__like" type="button">
                   <img src="./images/Like_Icon.svg" alt="Like" />
                 </button>
               </div>
-            </div>
+            </li>
           </template>
-        </div>
+        </ul>
       </main>
 
       <footer class="footer">2024 © Spots</footer>
+    </div>
+
+    <div class="modal" id="edit-modal">
+      <div class="modal__container">
+        <h2 class="modal__title">Edit Profile</h2>
+        <button type="button" class="modal__close">
+          <img src="./images/x_button.svg" alt="Close button" />
+        </button>
+        <form class="modal__form">
+          <fieldset class="modal__fieldset">
+            <label for="name" class="fieldset__name-label">Name</label>
+            <input type="text" class="fieldset__name" id="name" />
+            <label for="description" class="fieldset__description-label"
+              >Description</label
+            >
+            <input type="text" class="fieldset__description" id="description" />
+            <button type="submit" class="fieldset__save">Save</button>
+          </fieldset>
+        </form>
+      </div>
     </div>
 
     <script src="./scripts/index.js" defer></script>

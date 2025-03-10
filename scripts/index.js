@@ -32,11 +32,11 @@ const initialCards = [
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
-    .querySelector(".cards__card")
+    .querySelector(".cards__item")
     .cloneNode(true);
 
-  const cardName = cardElement.querySelector(".cards__card-description");
-  const cardLink = cardElement.querySelector(".cards__card-image");
+  const cardName = cardElement.querySelector(".cards__description");
+  const cardLink = cardElement.querySelector(".cards__image");
 
   cardName.textContent = data.name;
   cardLink.alt = data.name;
@@ -54,15 +54,15 @@ for (let i = 0; i < initialCards.length; i++) {
 const profileFormElement = document.querySelector("#edit-modal");
 const editButtonProfile = document.querySelector(".profile__avatar-edit");
 const closeButtonModal = profileFormElement.querySelector(".modal__close");
-const modalFormElement = document.querySelector(".modal__save");
+const modalFormElement = profileFormElement.querySelector(".modal__form");
 
 const profileNameElement = document.querySelector(".profile__avatar-name");
 const profileJobElement = document.querySelector(
   ".profile__avatar-description"
 );
 
-const nameInput = profileFormElement.querySelector(".modal__name");
-const jobInput = profileFormElement.querySelector(".modal__description");
+const nameInput = profileFormElement.querySelector(".fieldset__name");
+const jobInput = profileFormElement.querySelector(".fieldset__description");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();

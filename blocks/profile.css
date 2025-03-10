@@ -27,10 +27,10 @@
 .profile__avatar-name {
   font-size: 32px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 100%;
+  overflow: hidden;
   color: #212121;
   text-overflow: ellipsis;
-  overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
