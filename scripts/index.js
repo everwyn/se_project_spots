@@ -2,6 +2,7 @@
 
 const cardTemplate = document.querySelector("#card-template");
 const cards = document.querySelector(".cards");
+const cardsList = document.querySelector(".cards__list");
 
 const initialCards = [
   {
@@ -32,7 +33,7 @@ const initialCards = [
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
-    .querySelector(".card__item")
+    .querySelector(".card")
     .cloneNode(true);
 
   const cardName = cardElement.querySelector(".card__description");
@@ -47,7 +48,7 @@ function getCardElement(data) {
 
 for (let i = 0; i < initialCards.length; i++) {
   const cardElement = getCardElement(initialCards[i]);
-  cards.prepend(cardElement);
+  cardsList.prepend(cardElement);
 }
 
 //Modal edit for profile section

@@ -1,8 +1,4 @@
-.card__list {
-  display: flex;
-}
-
-.card__item {
+.card {
   margin: 0;
   min-height: 445px;
   display: flex;
@@ -54,7 +50,7 @@
 }
 
 @media screen and (max-width: 763px) {
-  .card__item {
+  .card {
     max-width: 288px;
     min-height: 318px;
   }
