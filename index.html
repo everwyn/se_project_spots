@@ -54,13 +54,12 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
-                <img class="card__image" src="" alt="" />
+                <img class="card__image" />
                 <div class="card__comments">
                   <h3 class="card__description"></h3>
-                  <button class="card__like" type="button">
-                    <img src="./images/Like_Icon.svg" alt="Like" />
-                  </button>
+                  <button class="card__like" type="button"></button>
                 </div>
+                <button class="card__delete" type="button"></button>
               </li>
             </template>
           </ul>
@@ -70,23 +69,32 @@
       <footer class="footer">2024 © Spots</footer>
     </div>
 
-    <div class="modal" id="edit-modal">
-      <div class="modal__container">
-        <h2 class="modal__title">Edit Profile</h2>
-        <button type="button" class="modal__close">
-          <img src="./images/x_button.svg" alt="Close button" />
-        </button>
-        <form class="modal__form">
-          <fieldset class="modal__fieldset">
-            <label for="name" class="modal__label">Name</label>
-            <input type="text" class="modal__input" id="name" />
-            <label for="description" class="modal__label">Description</label>
-            <input type="text" class="modal__input" id="description" />
-            <button type="submit" class="modal__button">Save</button>
-          </fieldset>
-        </form>
+    <template id="edit-modal">
+      <div class="modal">
+        <div class="modal__container">
+          <h2 class="modal__title">Edit Profile</h2>
+          <button type="button" class="modal__close">
+            <img src="./images/x_button.svg" alt="Close button" />
+          </button>
+          <form class="modal__form">
+            <fieldset class="modal__fieldset">
+              <label for="name" class="modal__label" id="name-label"
+                >Name</label
+              >
+              <input type="text" class="modal__input" id="name" />
+              <label
+                for="description"
+                class="modal__label"
+                id="description-label"
+                >Description</label
+              >
+              <input type="text" class="modal__input" id="description" />
+              <button type="submit" class="modal__button">Save</button>
+            </fieldset>
+          </form>
+        </div>
       </div>
-    </div>
+    </template>
 
     <script src="./scripts/index.js" defer></script>
   </body>

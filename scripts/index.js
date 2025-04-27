@@ -1,10 +1,18 @@
+// Main document
+const documentMain = document.querySelector(".content");
+
 // Card creator for initial cards
 
 const cardTemplate = document.querySelector("#card-template");
 const cards = document.querySelector(".cards");
 const cardsList = document.querySelector(".cards__list");
+const cardLike = document.querySelector(".card__like");
 
 const initialCards = [
+  {
+    name: "Golden Gate bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
   {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -43,16 +51,37 @@ function getCardElement(data) {
   cardLink.alt = data.name;
   cardLink.src = data.link;
 
+  const likeButtonSelector = cardElement.querySelector(".card__like");
+  likeButtonSelector.addEventListener("click", handleLike);
+
+  const cardDelete = cardElement.querySelector(".card__delete");
+  cardDelete.addEventListener("click", handleDeleteCard);
+
+  cardLink.addEventListener("click", clickImage);
+
   return cardElement;
 }
 
-for (let i = 0; i < initialCards.length; i++) {
-  const cardElement = getCardElement(initialCards[i]);
+initialCards.forEach(function (item) {
+  const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);
+});
+
+function handleLike() {
+  event.target.classList.toggle("card__liked");
+  event.target.classList.toggle("card__like");
 }
 
-//Modal edit for profile section
-const profileFormElement = document.querySelector("#edit-modal");
+function handleDeleteCard() {
+  event.target.parentElement.remove();
+}
+
+//Profile modal edit section
+const profileFormElement = document
+  .querySelector("#edit-modal")
+  .content.querySelector(".modal")
+  .cloneNode(true);
+documentMain.after(profileFormElement);
 const editButtonProfile = document.querySelector(".profile__avatar-edit");
 const closeButtonModal = profileFormElement.querySelector(".modal__close");
 const modalFormElement = profileFormElement.querySelector(".modal__form");
@@ -77,16 +106,102 @@ function handleProfileFormSubmit(evt) {
   closeModal();
 }
 
-function openModal() {
-  profileFormElement.classList.add("modal_opened");
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+}
+
+editButtonProfile.addEventListener("click", () => {
+  openModal(profileFormElement);
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileJobElement.textContent;
-}
+});
 
-function closeModal() {
-  profileFormElement.classList.remove("modal_opened");
-}
-
-editButtonProfile.addEventListener("click", openModal);
-closeButtonModal.addEventListener("click", closeModal);
+closeButtonModal.addEventListener("click", () => {
+  closeModal(profileFormElement);
+});
 modalFormElement.addEventListener("submit", handleProfileFormSubmit);
+
+// New post modal
+
+const newPostFormElement = document
+  .querySelector("#edit-modal")
+  .content.querySelector(".modal")
+  .cloneNode(true);
+documentMain.after(newPostFormElement);
+const newPostButton = document.querySelector(".profile__button");
+
+const postCloseButtonModal = newPostFormElement.querySelector(".modal__close");
+const postModalFormElement = newPostFormElement.querySelector(".modal__form");
+
+const newPostLink = newPostFormElement.querySelector("#name");
+const newPostCaption = newPostFormElement.querySelector("#description");
+
+newPostFormElement.querySelector(".modal__title").textContent = "New post";
+newPostFormElement.querySelector("#name-label").textContent = "Image link";
+newPostFormElement.querySelector("#description-label").textContent = "Caption";
+newPostLink.placeholder = "Paste a link to the picture";
+newPostCaption.placeholder = "Type your caption";
+
+newPostButton.addEventListener("click", () => {
+  openModal(newPostFormElement);
+});
+
+postCloseButtonModal.addEventListener("click", () => {
+  closeModal(newPostFormElement);
+});
+
+postModalFormElement.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  const postName = newPostCaption.value;
+  const postLink = newPostLink.value;
+  const data = { name: postName, link: postLink };
+  const cardElement = getCardElement(data);
+  cardsList.prepend(cardElement);
+  closeModal(newPostFormElement);
+});
+
+// Preview Modal
+
+const previewModal = document
+  .querySelector("#edit-modal")
+  .content.querySelector(".modal")
+  .cloneNode(true);
+previewModal.innerHTML = "";
+
+const previewImageCaption = document.createElement("p");
+previewImageCaption.classList.add("modal__preview-caption");
+
+const modalPreviewContainer = document.createElement("div");
+modalPreviewContainer.classList.add("modal__preview-container");
+
+const previewImage = document.createElement("img");
+previewImage.classList.add("modal__preview-image");
+
+const closeButtonPreview = document.createElement("button");
+closeButtonPreview.type = "button";
+closeButtonPreview.classList.add("modal__preview-close");
+
+const closeButtonPreviewImage = document.createElement("img");
+closeButtonPreviewImage.src = "./images/xButtonWhite.svg";
+closeButtonPreviewImage.alt = "preview close button";
+
+closeButtonPreview.appendChild(closeButtonPreviewImage);
+modalPreviewContainer.appendChild(previewImage);
+modalPreviewContainer.appendChild(previewImageCaption);
+modalPreviewContainer.appendChild(closeButtonPreview);
+previewModal.appendChild(modalPreviewContainer);
+documentMain.after(previewModal);
+
+function clickImage() {
+  previewImage.src = event.target.src;
+  previewImageCaption.textContent = event.target.alt;
+  openModal(previewModal);
+}
+
+closeButtonPreview.addEventListener("click", () => {
+  closeModal(previewModal);
+});
