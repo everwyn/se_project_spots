@@ -10,10 +10,13 @@
   font-family: "Poppins", "Times New Roman", serif;
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: visibility 0.3s, opacity 0.3s ease-in;
+  opacity: 0;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -196,10 +199,11 @@
 
 @media screen and (max-width: 763px) {
   .modal__container {
-    width: 300px;
+    width: 280px;
     height: 336px;
     padding: 12px 12px;
     gap: 24px;
+    margin: 0 auto;
   }
 
   .modal__form {
@@ -220,6 +224,7 @@
     max-width: 276px;
     max-height: 48px;
     margin-bottom: 12px;
+    font-size: 18px;
   }
 
   .modal__button {
@@ -232,15 +237,11 @@
   }
 
   .modal__preview-image {
-    max-width: 300px;
+    max-width: 90vw;
   }
 
   .modal__preview-close {
     right: 0;
     top: -40px;
-  }
-
-  .modal__preview-caption {
-    bottom: -20px;
   }
 }

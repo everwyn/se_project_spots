@@ -67,13 +67,13 @@ initialCards.forEach(function (item) {
   cardsList.prepend(cardElement);
 });
 
-function handleLike() {
-  event.target.classList.toggle("card__liked");
+function handleLike(event) {
+  event.target.classList.toggle("card__like_active");
   event.target.classList.toggle("card__like");
 }
 
 function handleDeleteCard() {
-  event.target.parentElement.remove();
+  event.target.closest(".card").remove();
 }
 
 //Profile modal edit section
@@ -103,7 +103,7 @@ function handleProfileFormSubmit(evt) {
   profileNameElement.textContent = profileNameEdit;
   profileJobElement.textContent = profileJobEdit;
 
-  closeModal();
+  closeModal(profileFormElement);
 }
 
 function openModal(modal) {
@@ -128,9 +128,9 @@ modalFormElement.addEventListener("submit", handleProfileFormSubmit);
 // New post modal
 
 const newPostFormElement = document
-  .querySelector("#edit-modal")
-  .content.querySelector(".modal")
-  .cloneNode(true);
+  .querySelector("#post-modal")
+  .content.querySelector(".modal");
+
 documentMain.after(newPostFormElement);
 const newPostButton = document.querySelector(".profile__button");
 
@@ -139,12 +139,6 @@ const postModalFormElement = newPostFormElement.querySelector(".modal__form");
 
 const newPostLink = newPostFormElement.querySelector("#name");
 const newPostCaption = newPostFormElement.querySelector("#description");
-
-newPostFormElement.querySelector(".modal__title").textContent = "New post";
-newPostFormElement.querySelector("#name-label").textContent = "Image link";
-newPostFormElement.querySelector("#description-label").textContent = "Caption";
-newPostLink.placeholder = "Paste a link to the picture";
-newPostCaption.placeholder = "Type your caption";
 
 newPostButton.addEventListener("click", () => {
   openModal(newPostFormElement);
@@ -162,15 +156,14 @@ postModalFormElement.addEventListener("submit", (evt) => {
   const cardElement = getCardElement(data);
   cardsList.prepend(cardElement);
   closeModal(newPostFormElement);
+  evt.target.reset();
 });
 
 // Preview Modal
 
 const previewModal = document
-  .querySelector("#edit-modal")
-  .content.querySelector(".modal")
-  .cloneNode(true);
-previewModal.innerHTML = "";
+  .querySelector("#preview-modal")
+  .content.querySelector(".modal");
 
 const previewImageCaption = document.createElement("p");
 previewImageCaption.classList.add("modal__preview-caption");
@@ -196,7 +189,8 @@ modalPreviewContainer.appendChild(closeButtonPreview);
 previewModal.appendChild(modalPreviewContainer);
 documentMain.after(previewModal);
 
-function clickImage() {
+function clickImage(event) {
+  previewImage.alt = event.target.alt;
   previewImage.src = event.target.src;
   previewImageCaption.textContent = event.target.alt;
   openModal(previewModal);
