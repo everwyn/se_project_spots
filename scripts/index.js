@@ -72,15 +72,13 @@ function handleLike(event) {
   event.target.classList.toggle("card__like");
 }
 
-function handleDeleteCard() {
+function handleDeleteCard(event) {
   event.target.closest(".card").remove();
 }
 
 //Profile modal edit section
-const profileFormElement = document
-  .querySelector("#edit-modal")
-  .content.querySelector(".modal")
-  .cloneNode(true);
+const profileFormElement = document.querySelector("#edit-modal");
+
 documentMain.after(profileFormElement);
 const editButtonProfile = document.querySelector(".profile__avatar-edit");
 const closeButtonModal = profileFormElement.querySelector(".modal__close");
@@ -127,9 +125,7 @@ modalFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 // New post modal
 
-const newPostFormElement = document
-  .querySelector("#post-modal")
-  .content.querySelector(".modal");
+const newPostFormElement = document.querySelector("#post-modal");
 
 documentMain.after(newPostFormElement);
 const newPostButton = document.querySelector(".profile__button");
@@ -161,32 +157,14 @@ postModalFormElement.addEventListener("submit", (evt) => {
 
 // Preview Modal
 
-const previewModal = document
-  .querySelector("#preview-modal")
-  .content.querySelector(".modal");
+const previewModal = document.querySelector("#preview-modal");
 
-const previewImageCaption = document.createElement("p");
-previewImageCaption.classList.add("modal__preview-caption");
+const previewImageCaption = document.querySelector(".modal__preview-caption");
 
-const modalPreviewContainer = document.createElement("div");
-modalPreviewContainer.classList.add("modal__preview-container");
+const previewImage = document.querySelector(".modal__preview-image");
 
-const previewImage = document.createElement("img");
-previewImage.classList.add("modal__preview-image");
+const closeButtonPreview = document.querySelector(".modal__preview-close");
 
-const closeButtonPreview = document.createElement("button");
-closeButtonPreview.type = "button";
-closeButtonPreview.classList.add("modal__preview-close");
-
-const closeButtonPreviewImage = document.createElement("img");
-closeButtonPreviewImage.src = "./images/xButtonWhite.svg";
-closeButtonPreviewImage.alt = "preview close button";
-
-closeButtonPreview.appendChild(closeButtonPreviewImage);
-modalPreviewContainer.appendChild(previewImage);
-modalPreviewContainer.appendChild(previewImageCaption);
-modalPreviewContainer.appendChild(closeButtonPreview);
-previewModal.appendChild(modalPreviewContainer);
 documentMain.after(previewModal);
 
 function clickImage(event) {
