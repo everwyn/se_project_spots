@@ -89,8 +89,8 @@ const profileJobElement = document.querySelector(
   ".profile__avatar-description"
 );
 
-const nameInput = profileFormElement.querySelector("#name");
-const jobInput = profileFormElement.querySelector("#description");
+const nameInput = profileFormElement.querySelector("#edit-modal-name");
+const jobInput = profileFormElement.querySelector("#edit-modal-description");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -116,6 +116,7 @@ editButtonProfile.addEventListener("click", () => {
   openModal(profileFormElement);
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileJobElement.textContent;
+  resetValidation(profileFormElement, [nameInput, jobInput]);
 });
 
 closeButtonModal.addEventListener("click", () => {
@@ -133,8 +134,8 @@ const newPostButton = document.querySelector(".profile__button");
 const postCloseButtonModal = newPostFormElement.querySelector(".modal__close");
 const postModalFormElement = newPostFormElement.querySelector(".modal__form");
 
-const newPostLink = newPostFormElement.querySelector("#name");
-const newPostCaption = newPostFormElement.querySelector("#description");
+const newPostLink = newPostFormElement.querySelector("#new-post-url");
+const newPostCaption = newPostFormElement.querySelector("#new-post-caption");
 
 newPostButton.addEventListener("click", () => {
   openModal(newPostFormElement);
@@ -150,9 +151,11 @@ postModalFormElement.addEventListener("submit", (evt) => {
   const postLink = newPostLink.value;
   const data = { name: postName, link: postLink };
   const cardElement = getCardElement(data);
+  const buttonElement = formElement.querySelector(".modal__button");
   cardsList.prepend(cardElement);
   closeModal(newPostFormElement);
   evt.target.reset();
+  disableButton(buttonElement);
 });
 
 // Preview Modal

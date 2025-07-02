@@ -75,14 +75,36 @@
         <button type="button" class="modal__close">
           <img src="./images/x_button.svg" alt="Close button" />
         </button>
-        <form class="modal__form">
+        <form class="modal__form" novalidate>
           <fieldset class="modal__fieldset">
-            <label for="name" class="modal__label" id="name-label">Name</label>
-            <input type="text" class="modal__input" id="name" />
-            <label for="description" class="modal__label" id="description-label"
+            <label for="edit-modal-name" class="modal__label" id="name-label"
+              >Name</label
+            >
+            <input
+              type="text"
+              class="modal__input"
+              id="edit-modal-name"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span id="edit-modal-name-error" class="modal__error"></span>
+
+            <label
+              for="edit-modal-description"
+              class="modal__label"
+              id="description-label"
               >Description</label
             >
-            <input type="text" class="modal__input" id="description" />
+            <input
+              type="text"
+              class="modal__input"
+              id="edit-modal-description"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span id="edit-modal-description-error" class="modal__error"></span>
             <button type="submit" class="modal__button">Save</button>
           </fieldset>
         </form>
@@ -95,26 +117,35 @@
         <button type="button" class="modal__close">
           <img src="./images/x_button.svg" alt="Close button" />
         </button>
-        <form class="modal__form">
+        <form class="modal__form" novalidate>
           <fieldset class="modal__fieldset">
-            <label for="name" class="modal__label" id="name-label"
+            <label for="post-modal-url" class="modal__label" id="name-label"
               >Image link</label
             >
             <input
-              type="text"
+              type="url"
               class="modal__input"
-              id="name"
+              id="post-modal-url"
               placeholder="Paste a link to the picture"
+              required
             />
-            <label for="description" class="modal__label" id="description-label"
+            <span id="post-modal-url-error" class="modal__error"></span>
+            <label
+              for="post-modal-caption"
+              class="modal__label"
+              id="description-label"
               >Caption</label
             >
             <input
               type="text"
               class="modal__input"
-              id="description"
+              id="post-modal-caption"
               placeholder="Type your caption"
+              minlength="2"
+              maxlength="30"
+              required
             />
+            <span id="post-modal-caption-error" class="modal__error"></span>
             <button type="submit" class="modal__button">Save</button>
           </fieldset>
         </form>
@@ -132,5 +163,6 @@
     </div>
 
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
   </body>
 </html>
