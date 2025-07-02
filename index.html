@@ -119,9 +119,7 @@
         </button>
         <form class="modal__form" novalidate>
           <fieldset class="modal__fieldset">
-            <label for="post-modal-url" class="modal__label" id="name-label"
-              >Image link</label
-            >
+            <label for="post-modal-url" class="modal__label">Image link</label>
             <input
               type="url"
               class="modal__input"
@@ -130,12 +128,7 @@
               required
             />
             <span id="post-modal-url-error" class="modal__error"></span>
-            <label
-              for="post-modal-caption"
-              class="modal__label"
-              id="description-label"
-              >Caption</label
-            >
+            <label for="post-modal-caption" class="modal__label">Caption</label>
             <input
               type="text"
               class="modal__input"
@@ -154,7 +147,7 @@
 
     <div class="modal" id="preview-modal">
       <div class="modal__preview-container">
-        <img src="" alt="" class="modal__preview-image" />
+        <img class="modal__preview-image" />
         <p class="modal__preview-caption"></p>
         <button type="button" class="modal__preview-close">
           <img src="./images/xButtonWhite.svg" alt="close button" />
