@@ -7,7 +7,7 @@ const settings = {
   errorClass: "modal__error",
 };
 
-function enableValidation() {
+function enableValidation(settings) {
   const formSelector = Array.from(
     document.querySelectorAll(settings.formSelector)
   );
@@ -89,4 +89,4 @@ function resetValidation(formElement, inputList) {
   });
 }
 
-enableValidation();
+enableValidation(settings);

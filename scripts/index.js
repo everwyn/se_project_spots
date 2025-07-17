@@ -83,11 +83,12 @@ documentMain.after(profileFormElement);
 const editButtonProfile = document.querySelector(".profile__avatar-edit");
 const closeButtonModal = profileFormElement.querySelector(".modal__close");
 const modalFormElement = profileFormElement.querySelector(".modal__form");
-
 const profileNameElement = document.querySelector(".profile__avatar-name");
 const profileJobElement = document.querySelector(
   ".profile__avatar-description"
 );
+const escapeListenerVariable = (event, modal) =>
+  modalEscapeListener(event, modal);
 
 const nameInput = profileFormElement.querySelector("#edit-modal-name");
 const jobInput = profileFormElement.querySelector("#edit-modal-description");
@@ -104,12 +105,40 @@ function handleProfileFormSubmit(evt) {
   closeModal(profileFormElement);
 }
 
+function modalEscapeListener(event, modal) {
+  if (event.key === "Escape") {
+    closeModal(modal);
+  }
+}
+
+function modalOverlayListener(event, modal) {
+  if (
+    event.button === 0 &&
+    !event.target.closest(".modal__container") &&
+    !event.target.closest(".modal__preview-container")
+  ) {
+    closeModal(modal);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", (event) => {
+    escapeListenerVariable(event, modal);
+  });
+  modal.addEventListener("click", (event) => {
+    modalOverlayListener(event, modal);
+  });
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  documentMain.removeEventListener("keydown", (event) => {
+    escapeListenerVariable(event, modal);
+  });
+  modal.removeEventListener("click", (event) => {
+    modalOverlayListener(event, modal);
+  });
 }
 
 editButtonProfile.addEventListener("click", () => {
@@ -134,8 +163,8 @@ const newPostButton = document.querySelector(".profile__button");
 const postCloseButtonModal = newPostFormElement.querySelector(".modal__close");
 const postModalFormElement = newPostFormElement.querySelector(".modal__form");
 
-const newPostLink = newPostFormElement.querySelector("#new-post-url");
-const newPostCaption = newPostFormElement.querySelector("#new-post-caption");
+const newPostLink = newPostFormElement.querySelector("#post-modal-url");
+const newPostCaption = newPostFormElement.querySelector("#post-modal-caption");
 
 newPostButton.addEventListener("click", () => {
   openModal(newPostFormElement);
@@ -151,7 +180,7 @@ postModalFormElement.addEventListener("submit", (evt) => {
   const postLink = newPostLink.value;
   const data = { name: postName, link: postLink };
   const cardElement = getCardElement(data);
-  const buttonElement = formElement.querySelector(".modal__button");
+  const buttonElement = newPostFormElement.querySelector(".modal__button");
   cardsList.prepend(cardElement);
   closeModal(newPostFormElement);
   evt.target.reset();
@@ -177,6 +206,7 @@ function clickImage(event) {
   openModal(previewModal);
 }
 
-closeButtonPreview.addEventListener("click", () => {
+closeButtonPreview.addEventListener("click", (event) => {
+  event.preventDefault();
   closeModal(previewModal);
 });
